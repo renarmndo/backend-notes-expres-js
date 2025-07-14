@@ -1,0 +1,80 @@
+# register
+
+###
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username":"dani",
+    "email":"dani@gmail.com",
+    "password":"1234",
+    "role":"admin"
+}
+
+
+# user login
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email":"dani@gmail.com",
+    "password":"1234"
+}
+
+
+# get profile
+###
+GET http://localhost:5000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJkYW5pQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MjM5MTk0MywiZXhwIjoxNzUyNDc4MzQzfQ.t2Yg8T0zWOsvlYCWbncjqSk5CYUN_cjN749GlkPYrB0
+
+
+
+
+# notes
+###
+POST http://localhost:5000/notes/create-notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3NTIzOTQyMDIsImV4cCI6MTc1MjQ4MDYwMn0.CKM9xXgN2rRbXJ2WKHBkmk07xlKaxupT0LXa-n0g8DQ
+Content-Type: application/json
+
+{
+    "title":"Tugas pak Dian",
+    "content":"Coding",
+    "is_done":false,
+    "pinned":false,
+    "deadline":"2025-07-17"
+}
+
+
+# get notes 
+###
+GET http://localhost:5000/notes/get-notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3NTIzOTQyMDIsImV4cCI6MTc1MjQ4MDYwMn0.CKM9xXgN2rRbXJ2WKHBkmk07xlKaxupT0LXa-n0g8DQ
+
+
+
+#get notes by id
+###
+GET http://localhost:5000/notes/get-notes/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJkYW5pQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MjM5NDcxOSwiZXhwIjoxNzUyNDgxMTE5fQ.6CbleTkub4wst170J8TODEHEUmiBJISTcO4J1V1IsfI
+
+# update data catatan
+###
+PATCH http://localhost:5000/notes/update-notes/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3NTIzOTQyMDIsImV4cCI6MTc1MjQ4MDYwMn0.CKM9xXgN2rRbXJ2WKHBkmk07xlKaxupT0LXa-n0g8DQ
+Content-Type: application/json
+
+{
+    "title":"Tugas oh",
+    "content":"tugas makalah",
+    "is_done":false,
+    "pinned":true,
+    "deadline":"2025-07-17"
+}
+
+
+
+# delete catatan
+###
+DELETE http://localhost:5000/notes/delete-notes/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJkYW5pQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MjM5NDcxOSwiZXhwIjoxNzUyNDgxMTE5fQ.6CbleTkub4wst170J8TODEHEUmiBJISTcO4J1V1IsfI
